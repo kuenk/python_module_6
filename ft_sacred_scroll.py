@@ -1,4 +1,5 @@
 import alchemy
+from alchemy.elements import create_fire, create_water
 
 print("=== Sacred Scroll Mastery ===\n")
 
@@ -14,19 +15,19 @@ print(f"alchemy.elements.create_air(): "
 print("Testint package-level accces (controlled "
       "by __init__.py):")
 print(f"alchemy.create_fire(): "
-      f"{alchemy.create_fire()}")
+      f"{create_fire()}")
 print(f"alchemy.create_water(): "
-      f"{alchemy.create_water()}")
+      f"{create_water()}")
 try:
     print(f"alchemy.create_earth(): "
-          f"{alchemy.create_earth()}")
-except AttributeError:
+          f"{create_earth()}")
+except NameError:
     print("alchemy.create_earth(): "
           "AttributeError - not exposed")
 try:
     print(f"alchemy.create_air(): "
-          f"{alchemy.create_air()}\n")
-except AttributeError:
+          f"{create_air()}\n")
+except NameError:
     print("alchemy.create_air(): "
           "AttributeError - not exposed")
 
